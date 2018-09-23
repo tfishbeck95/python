@@ -1,0 +1,51 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Sep 22 21:17:30 2018
+
+@author: tfishbeck
+"""
+import random
+
+#Index values for each selection
+comp_selection = ['rock', 'paper', 'scissors']
+player_selection = ['rock', 'paper', 'scissors']
+
+#index 0 = tie; 1 = loss; 2 = win
+outcome = [['rock','paper','scissors'],['paper','scissors','rock'],['scissors','rock','paper']]
+
+print('The first player to win 2 out of 3 games wins the match!')
+
+#These are the player scores
+cScore = 0
+mScore = 0
+
+#This is to keep track of the hand count
+hCount = 1 
+
+
+while (cScore < 2) or (mScore < 2):
+    mSelection = input('What is your selection for hand ' + str(hCount) + ':').lower()
+    cIndex = comp_selection[random.randint(0,2)]
+    result = player_selection.index(mSelection) - outcome[player_selection.index(mSelection)].index(cIndex)
+    if result == 1:
+        cScore +=1
+        print('The computer won this round.')
+        if cScore >= 2:
+            print('You lose. Your score is: ' + str(mScore) + '. The opponent score is: ' + str(cScore) + '.')
+            break
+    elif result == 2:
+        mScore +=1
+        print('You won this round.')
+        if mScore >= 2:
+            print('You win. Your score is: ' + str(mScore) + '. The opponent score is: ' + str(cScore) + '.')
+    else:
+        print('You tied.')
+        
+        
+print('The game is over.')
+    
+
+    
+    
+    
+    
