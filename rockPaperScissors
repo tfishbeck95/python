@@ -25,15 +25,15 @@ hCount = 1
 
 while (cScore < 2) or (mScore < 2):
     mSelection = input('What is your selection for hand ' + str(hCount) + ':').lower()
-    cIndex = comp_selection[random.randint(0,2)]
+    cIndex = comp_selection[random.randint(1,3)-1]
     result = player_selection.index(mSelection) - outcome[player_selection.index(mSelection)].index(cIndex)
-    if result == 1:
+    if abs(result) == 1:
         cScore +=1
         print('The computer won this round.')
         if cScore >= 2:
             print('You lose. Your score is: ' + str(mScore) + '. The opponent score is: ' + str(cScore) + '.')
             break
-    elif result == 2:
+    elif abs(result) == 2:
         mScore +=1
         print('You won this round.')
         if mScore >= 2:
