@@ -36,13 +36,27 @@ spInfoList = ['Hardware Depreciation.csv','HardwareStatus.csv','IBM Account Merg
               'Server Profitibility - Inventory 2.0 MRB Adjustment.csv',
               'SP2 Analysis Data.csv','StorageDevicePull.csv']
 
+
 for i in os.listdir(os.path.join(basePath, 'Downloads')):
     iPath = os.path.join(basePath, 'Downloads')
     if i in powerTableList:
-        shutil.move(os.path.join(iPath, str(i)),os.path.join(fPath,'power_tables'))
+        shutil.copy(os.path.join(iPath, str(i)),os.path.join(fPath,'power_tables'))
     elif i in spInfoList:
-        shutil.move(os.path.join(iPath, str(i)),os.path.join(fPath,'SP_Info'))
+        shutil.copy(os.path.join(iPath, str(i)),os.path.join(fPath,'SP_Info'))
+
+#This creates a new source file
+if input('Do you want to create a new source file? ').lower()[0] == 'y':    
+    fullFileList = powerTableList + spInfoList
+    newFilePaths = []
     
-    
+    for i in fullFileList:
+        newFilePaths.append(str(fPath) + i + '\n')
+        
+    with open(os.path.join(fPath, 'QuerySources.txt'), 'w') as f2:
+        f2.writelines(newFilePaths)
+
+
+
+
     
     
