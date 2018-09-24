@@ -29,19 +29,19 @@ os.mkdir(os.path.join(fPath, 'SP_Info\\'))
 
 
 #This creates the new folder for the SP2 source files
-powerTableList = ['bp_dc.csv','proc_ram.csv','gpu_hdd.csv','mb_nic.csv']
+powerTableList = ['bp_dc.csv','proc_ram.csv','gpu_hdd.csv','mobo_nc.csv']
 spInfoList = ['Hardware Depreciation.csv','HardwareStatus.csv','IBM Account Merge.csv',
               'LBFW_Allocations.csv','Server Profitability - Actuals Dashboard.csv',
               'Server Profitability - Incremental Dashboard.csv',
-              'Server Profitability - Inventory 2.0 MRB Adjustment.csv',
+              'Server Profitibility - Inventory 2.0 MRB Adjustment.csv',
               'SP2 Analysis Data.csv','StorageDevicePull.csv']
 
 for i in os.listdir(os.path.join(basePath, 'Downloads')):
     iPath = os.path.join(basePath, 'Downloads')
     if i in powerTableList:
-        shutil.copy(os.path.join(iPath, str(i)),os.path.join(fPath,'power_tables'))
+        shutil.move(os.path.join(iPath, str(i)),os.path.join(fPath,'power_tables'))
     elif i in spInfoList:
-        shutil.copy(os.path.join(iPath, str(i)),os.path.join(fPath,'SP_Info'))
+        shutil.move(os.path.join(iPath, str(i)),os.path.join(fPath,'SP_Info'))
     
     
     
