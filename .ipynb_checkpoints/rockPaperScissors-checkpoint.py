@@ -13,7 +13,7 @@ player_selection = ['rock', 'paper', 'scissors']
 #index 0 = tie; 1 = loss; 2 = win
 outcome = [['rock','paper','scissors'],['paper','scissors','rock'],['scissors','rock','paper']]
 
-print('The first player to win 2 out of 3 games wins the match.')
+print('The first player to win 2 out of 3 games wins the match!')
 
 #These are the player scores
 cScore = 0
