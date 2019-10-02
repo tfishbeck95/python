@@ -25,6 +25,7 @@ def renameFiles(sourceDir):
                 shutil.copyfile(fileName,os.path.join(outputPath,str(fileDate)+str(newFileName)+'.txt'))
 
 
+#Put the source directory here
 dir = 'C:\\Users\\TylerFishbeck\\Box\\FBIT_TeamFolder\\Reporting and Processing\\Tableau Repository\\Recurring Dashboards\\Revenue by Geography\\Revenue by Geography Source\\'
 renameFiles(dir)
 
